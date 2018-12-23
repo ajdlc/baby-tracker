@@ -138,7 +138,7 @@
 
 	function updatePee($id, $date, $notes) {
 		global $conn;
-		$query = "UPDATE pees SET notes = :notes, time = :d where id = :id;";
+		$query = "UPDATE pees SET notes = :notes, time = :d where id = :id";
 		$statement = $conn->prepare($query);
 		$statement->bindValue(':id', $id);
 		$statement->bindValue(':d', $date);
@@ -154,7 +154,7 @@
 
 	function updatePoop($id, $date, $notes) {
 		global $conn;
-		$query = "UPDATE poops SET notes = :notes, time = :d where id = :id;";
+		$query = "UPDATE poops SET notes = :notes, time = :d where id = :id";
 		$statement = $conn->prepare($query);
 		$statement->bindValue(':id', $id);
 		$statement->bindValue(':d', $date);
@@ -170,7 +170,7 @@
 
 	function updateFeed($id, $date, $type, $notes) {
 		global $conn;
-		$query = "UPDATE pees SET notes = :notes, time = :d, type = :type where id = :id;";
+		$query = "UPDATE feedings SET notes = :notes, time = :d, type = :type where id = :id";
 		$statement = $conn->prepare($query);
 		$statement->bindValue(':id', $id);
 		$statement->bindValue(':d', $date);

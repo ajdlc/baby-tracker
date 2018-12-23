@@ -5,7 +5,7 @@
 
 	$conn = dbConnect();
 
-	// Get the id of whatever we are deleting
+	// Get the id of whatever we are editing
 	$id = $_POST['editBtn'];
 
 	// Get the type
@@ -65,7 +65,7 @@
 				<label class="formLabels" for="notesArea">Notes</label>
 				<textarea class="form-control" id="notes" name="notes" rows="3"><?= $record['notes']; ?></textarea>
 			</div>
-			<input type="hidden" name="id" value="<?= $id; ?>">
+			<input type="hidden" name="id" value="<?= $record['id']; ?>">
 			<button type="submit" class="btn btn-block btn-primary" name="type" value="<?= $type; ?>">Submit</button>
 		</form>	
 		<a class="btn btn-block btn-success" href="../index.php">Home</a>

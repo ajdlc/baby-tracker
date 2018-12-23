@@ -33,7 +33,7 @@
 			}
 
 			// Check to see if a pee, poop, or feed was edited.
-			if(isset($_SESSION['update']) && $_SESSION['update'] == "feed") {
+			if(isset($_SESSION['update']) && $_SESSION['update'] == "feeding") {
 				echo "<h2 class='confirmMessage'>Feeding was updated!</h2>";
 				// Unset the variable
 				unset($_SESSION['update']);
@@ -42,7 +42,7 @@
 				// Unset the variable
 				unset($_SESSION['update']);
 			} elseif (isset($_SESSION['update']) && $_SESSION['update'] == "poop") {
-				echo "<h2 class='confirmMessage'>Pee was updated!</h2>";
+				echo "<h2 class='confirmMessage'>Poop was updated!</h2>";
 				// Unset the variable
 				unset($_SESSION['update']);
 			}

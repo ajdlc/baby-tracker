@@ -16,8 +16,8 @@
 		$id = $_POST['id'];
 		$date = $_POST['date'];
 		$notes = $_POST['notes'];
-		$type = $_POST['type'];
-		updateFeed($id, $date, $type, $notes);
+		$typeOfFeed = $_POST['typeOfFeed'];
+		updateFeed($id, $date, $typeOfFeed, $notes);
 		// Set the session variable
 		$_SESSION['update'] = "feeding";
 		// Forward the user back to the previous page

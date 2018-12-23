@@ -18,7 +18,7 @@
 			$date = $_POST['date'];
 			$note = $_POST['notes'];
 			$typeOfFeed = $_POST['typeOfFeed'];
-			insertNewFeedWithDate($date, $notes, $typeOfFeed);
+			insertNewFeedWithDate($date, $note, $typeOfFeed);
 			// Set the session variable
 			$_SESSION['type'] = "feeding";
 			// Forward the user back to the previous page
