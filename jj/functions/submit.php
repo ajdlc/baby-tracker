@@ -61,7 +61,7 @@
 			// Get the variables
 			$date = $_POST['date'];
 			$note = $_POST['notes'];
-			insertNewPoopWithDate($date, $notes);
+			insertNewPoopWithDate($date, $note);
 			// Set the session variable
 			$_SESSION['type'] = "poop";
 			// Forward the user back to the previous page
