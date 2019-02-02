@@ -54,7 +54,7 @@
 								<label for="typeOfFeed">Type of Feed</label>
 								<select class="form-control" id="typeOfFeed" name="typeOfFeed">
 									<option>Breast Fed</option>
-									<option>Formula Fed</option>
+									<option selected>Formula Fed</option>
 									<option>Breast and Formula Fed</option>
 								</select>
 							</div>';

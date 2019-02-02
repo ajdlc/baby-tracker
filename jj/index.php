@@ -1,5 +1,11 @@
 <?php
 	session_start();
+
+	include 'dbConnect.php';
+
+	$conn = dbConnect();
+	$lastFeeding = getLastFeeding();
+	$amount24 = getLast24HoursFeedingsAmount();
 ?>
 
 <!DOCTYPE html>
@@ -62,6 +68,17 @@
 				<a class="btn btn-block btn-outline-success homePageBtn" role="button" href="./functions/addFeeding.php">Add Feeding</a>
 			</div>
 		</div>
+		<div class="grid-container">
+			<div class="grid-item" id="lastFeeding">
+				<h2>Last Feeding</h2>
+				<h3><?= prettyDateAndTime($lastFeeding['time']); ?></h3>
+				<h3 class="amount">Amount/Notes:<br><?= $lastFeeding['notes']; ?></h3>
+			</div>
+			<div class="grid-item" id="last24Hours">
+				<h2>Amount In Last 24 Hours</h2>
+				<h3 id="amount"><?= $amount24; ?> oz</h3>
+			</div>
+		</div>
 		<div class="row btnRow">
 			<div class="col-sm">
 				<a class="btn btn-block btn-primary homePageBtn" role="button" href="./functions/viewPees.php">Pees</a>
@@ -73,12 +90,9 @@
 				<a class="btn btn-block btn-primary homePageBtn" role="button" href="./functions/viewFeeds.php">Feedings</a>
 			</div>
 		</div>
-		<div class="row btnRow">
-			<div class="col-12">
-				<a class="btn btn-block btn btn-info homePageBtn" role="button" href="">All Information</a>
-			</div>
-		</div>
 	</div>
+
+
 
 
 	<!-- jQuery -->

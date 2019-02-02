@@ -26,6 +26,26 @@ body {
 	color: red;
 }
 
+/* CSS Grid */
+.grid-container {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	grid-gap: 30px;
+}
+
+.grid-item {
+	color: black;
+	height: 250px;
+	background-color: #df9320;
+	padding-top: 2em;
+	border-radius: 10px;
+}
+
+#amount {
+	padding-top: 0.2em;
+	font-size: 5.5em;
+}
+
 #deleteBtn {
 	margin-top: 1em;
 }

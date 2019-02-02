@@ -128,6 +128,43 @@
 		return $feed;
 	}
 
+	function getLastFeeding() {
+		global $conn;
+		$feed = array();
+
+		$query = "SELECT * FROM feedings ORDER BY time DESC LIMIT 1";
+		$statement = $conn->prepare($query);
+		$statement->execute();
+		$f = $statement->fetch();
+		$statement->closeCursor();
+		
+		// Setup the variable to return
+		$feed['id'] = $f['id'];
+		$feed['time'] = $f['time'];
+		$feed['notes'] = $f['notes'];
+		$feed['type'] = $f['type'];
+
+		return $feed;
+	}
+
+	function getLast24HoursFeedingsAmount() {
+		global $conn;
+		$total = 0;
+		// TODO: Construct the array of heroes to return a good array of heroes.
+		$query = "SELECT notes FROM feedings WHERE time > (SELECT DATE_SUB(NOW(), INTERVAL 1 DAY))";
+		$statement = $conn->prepare($query);
+		$statement->execute();
+		$feedings = $statement->fetchAll(PDO::FETCH_ASSOC);
+		$statement->closeCursor();
+
+		// Convert the strings to ints and sum them up.
+		for ($i = 0; $i < sizeof($feedings); $i++) {
+			$total += floatval($feedings[$i]['notes']);
+		}
+
+		return $total;
+	}
+
 	/*
 	 * ******************************************************************************************
 	 *
